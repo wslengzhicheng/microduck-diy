@@ -10,15 +10,53 @@ Microduck 的 3D 模型以 `.3mf` 格式发布在上游仓库：
 
 - 文件：[`microduck3D打印.3mf`](https://github.com/AI-FanGe/Microduck-build-tutorial)（位于仓库根目录）
 
+> [!NOTE]
+> 视频作者提到已将模型上传到拓竹/Bambu 社区（MakerWorld），但公开链接待核实。**优先使用上游仓库中的 `microduck3D打印.3mf` 文件**。
+
 ### 提取步骤
 
 1. 下载上游仓库中的 `microduck3D打印.3mf` 文件
-2. 使用切片软件（推荐 PrusaSlicer、OrcaSlicer 或 Bambu Studio）打开 `.3mf` 文件
+2. 使用切片软件（推荐 **Bambu Studio**、PrusaSlicer 或 OrcaSlicer）打开 `.3mf` 文件
 3. 在切片软件中可以看到所有部件的 3D 模型和预设的打印方向
 4. 如需单独导出 STL：在切片软件中选中单个部件 → 右键 → 导出为 STL
 
 > [!TIP]
 > `.3mf` 文件通常已经包含了推荐的打印方向和支撑设置。直接使用 `.3mf` 打印是最简单的方式。
+
+---
+
+## 颜色分组（视频参考）[~00:54]
+
+> **视频参考：** 以下颜色分组信息来自 [Microduck biped build / Dynamixel XL330](https://www.youtube.com/watch?v=Vep8AjoCnEM) ~00:54 处的 Bambu Studio 画面。
+
+视频作者使用 **Bambu Lab P1S** 打印机 + **Generic PLA**，在 `.3mf` 中按颜色分为 5 个打印组：
+
+| 打印组 | 颜色 | 内容 |
+| :--- | :--- | :--- |
+| 01 | 🟠 黄色/橙色 | 鸭嘴和脚部零件 |
+| 02 | ⚪ 白色 | 外壳（头部圆顶、躯干外盖等） |
+| 03 | 🔘 灰色 | 结构件（关节支架、连接板等） |
+| 04 | 🔘 灰色 + 🟠 橙色 | 结构件：起转盘、轴承、惰轮环等 |
+| 05 | 浅黄色 + 🟠 橙色 | 眼镜和脚掌 |
+
+> [!TIP]
+> 颜色仅影响外观，不影响功能。你可以自由选择配色。视频中使用了 Bambu Studio 的多色耗材列表（PLA Basic + Generic PLA 各色），单色打印机只需忽略颜色分组。
+
+<!-- TODO: 将以下视频截图放入 docs/assets/video-stills/ 后取消注释
+![Bambu Studio 打印分组 ~00:54](../../docs/assets/video-stills/00m54_bambu_print_groups.jpg)
+![Bambu Studio 切片界面 ~03:07](../../docs/assets/video-stills/03m07_bambu_studio.jpg)
+-->
+
+📷 *[截图待放入：`00m54_bambu_print_groups.jpg` — Bambu Studio 中 5 个打印组的缩略图]*
+
+📷 *[截图待放入：`03m07_bambu_studio.jpg` — Bambu Studio 切片界面全貌]*
+
+---
+
+## 脚部零件修正版 [~00:54]
+
+> [!IMPORTANT]
+> 视频画面显示上游原版脚部零件存在**配合不契合**的问题，作者已发布修正版（标注为「修正版」）修复了这一问题。请确认你下载的 `.3mf` 文件包含修正后的脚部零件。
 
 ---
 
@@ -35,7 +73,7 @@ Microduck 的 3D 模型以 `.3mf` 格式发布在上游仓库：
 | 喷嘴温度 | 200–215°C |
 
 > [!NOTE]
-> 上述为通用 PLA 参数，请根据你的打印机和耗材品牌微调。
+> 上述为通用 PLA 参数，请根据你的打印机和耗材品牌微调。视频作者使用 Bambu Lab P1S + 0.4mm 喷嘴 + 标准流量模式。
 
 ---
 
@@ -77,3 +115,12 @@ Microduck 的 3D 模型以 `.3mf` 格式发布在上游仓库：
 ## CAD 参考
 
 如需查看完整 CAD 模型和爆炸视图，请参考 [cad/README.md](../cad/README.md)。
+
+---
+
+## 参考来源
+
+| 来源 | 时间范围 | 对应章节 |
+| :--- | :--- | :--- |
+| [Microduck biped build / Dynamixel XL330](https://www.youtube.com/watch?v=Vep8AjoCnEM) | ~00:54 | 颜色分组、脚部修正版 |
+| 同上 | ~03:07 | Bambu Studio 切片参考 |

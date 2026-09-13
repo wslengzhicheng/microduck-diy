@@ -164,7 +164,19 @@ OpenRB-150 Dynamixel Port
 > [!CAUTION]
 > **绝对不要交叉 Data 和 GND！** [14:32] 接反会导致通信失败并可能损坏舵机。焊接前仔细确认线色对应关系。
 
-📷 *[照片占位：Y 形分线线束焊接过程]*
+<!-- TODO: 将以下视频截图放入 docs/assets/video-stills/ 后取消注释
+![Y 形分线线束 ~14:27](assets/video-stills/14m27_y_splice.jpg)
+-->
+
+📷 *[截图待放入：`14m27_y_splice.jpg` — Y 形分线线束焊接实拍 ~14:27]*
+
+下图为视频中展示的 3-pin 接线正确/错误对比（GND / V / Data 必须一一对应，不得交叉）：
+
+<!-- TODO: 将以下视频截图放入 docs/assets/video-stills/ 后取消注释
+![3-pin 正确/错误接法 ~14:32](assets/video-stills/14m32_wiring_correct_incorrect.jpg)
+-->
+
+📷 *[截图待放入：`14m32_wiring_correct_incorrect.jpg` — 正确接法（上）vs 错误接法（下）~14:32]*
 
 ---
 
