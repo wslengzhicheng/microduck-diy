@@ -25,7 +25,13 @@
 5. [`docs/commissioning`](commissioning/README.md) — 调试验证
 6. 上游 README — 刷写镜像并运行
 
-## 照片状态
+## 照片与视频截图状态
 
 > [!NOTE]
 > `assets/` 目录下的照片位为占位。Allen 拍摄实物后将逐步替换。如果你在装机过程中拍摄了清晰的过程照片，欢迎提交 PR。
+
+### 视频截图素材
+
+`assets/video-stills/` 目录用于存放从 YouTube 教程截取的画面。完整文件清单见 [`assets/video-stills/README.md`](assets/video-stills/README.md)。
+
+> **截图归属：** 所有视频截图来自 [Microduck biped build / Dynamixel XL330](https://www.youtube.com/watch?v=Vep8AjoCnEM)，作者为 [AI-FanGe](https://github.com/AI-FanGe/Microduck-build-tutorial)。截图仅用于本开源文档的教育/说明用途，版权归原视频作者所有。

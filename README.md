@@ -97,6 +97,10 @@ microduck-diy/
 
 ---
 
+## 更新日志
+
+- **2026-09** — 基于 [YouTube 装机视频](https://www.youtube.com/watch?v=Vep8AjoCnEM) 大幅充实文档：组装指南阶段 3–4（舵机预配置 / 零位对齐 / 关节结构 / 逐步装配）、调试指南（OpenRB USB 替代路径 + Center 零位步骤）、接线指南（Y 形分线线束 + 双供电方案对比警告）、BOM（视频淘宝采购快照店铺/标题表）、打印指南（颜色分组 + 脚部修正版说明）、视频截图素材框架。
+
 ## 许可证
 
 本仓库文档以 [Apache License 2.0](LICENSE) 发布。机械结构设计版权归 microban / pollen-robotics / AI-FanGe 原作者所有，请参阅各上游仓库的许可协议。

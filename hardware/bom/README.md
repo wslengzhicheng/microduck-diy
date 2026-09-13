@@ -21,7 +21,7 @@
 
 | 物料 | 数量 | 说明 | 采购参考 |
 | :--- | :---: | :--- | :--- |
-| 成品 6V 可充电电池 | 1 | 主电源。需要提供足够的瞬时电流驱动 14 个舵机。不使用自制 2S 电池组 | [淘宝搜索](https://s.taobao.com/search?q=6V+可充电电池组) |
+| 成品 6V 可充电电池 | 1 | 主电源。视频作者使用 **6.4V 1800mAh 磷酸铁锂** (19×37×66mm, 98g)。需确认尺寸适合躯干电池仓，过大需切割壳体 | [淘宝搜索](https://s.taobao.com/search?q=6.4V+1800mAh+磷酸铁锂) |
 | 电源开关 | 1 | 控制主电源通断。KCD1 型翘板开关或类似小型开关 | [淘宝搜索](https://s.taobao.com/search?q=KCD1+小型翘板开关) · [Amazon](https://www.amazon.com/s?k=KCD1+mini+rocker+switch) |
 | 5V 稳压模块 (DC-DC 降压) | 1 | 从 6V 电池降压到稳定 5V 给 Pi 供电。输出需≥2A | [淘宝搜索](https://s.taobao.com/search?q=5V+DC+DC+降压模块+3A) · [Amazon](https://www.amazon.com/s?k=5v+3a+buck+converter+module) |
 | USB 数据线 (Pi ↔ OpenRB-150) | 1 | Micro-USB (Pi 端) 转 Micro-USB/USB-C (OpenRB 端)，需要数据传输功能 | [淘宝搜索](https://s.taobao.com/search?q=micro+usb+数据线+短) |
@@ -78,6 +78,52 @@
 - 焊点必须用热缩管或热熔胶绝缘。
 - **不要在有电状态下焊接或拆焊。**
 
+---
+
+## 视频采购快照（淘宝店铺参考）
+
+> **视频参考：** 以下采购信息提取自 [Microduck biped build / Dynamixel XL330](https://www.youtube.com/watch?v=Vep8AjoCnEM) 中出现的淘宝/天猫交易快照画面。**视频仅展示了作者本人的采购记录，不构成推荐**——请按你自己的渠道和价格判断。我们仅记录店铺名和商品标题以方便搜索，不提供无法验证的商品 URL。
+
+| 视频时间 | 商品标题（视频中显示） | 店铺 | 对应物料 | 搜索关键词 |
+| :---: | :--- | :--- | :--- | :--- |
+| ~01:44 | XL330-M288-T 舵机 / 韩国官方授权 ROBOTIS Dynamixel… | WowRobo 机器人企业店铺 | XL330 舵机 | `XL330-M288-T WowRobo` |
+| ~02:05 | 树莓派 zero2w 开发板 Raspberry Pi Zero WH… 单主板 Zero 2W 主板 | 企众众秋 | Pi Zero 2W | `树莓派 Zero 2W 主板` |
+| ~02:06 | OPENRB-150 开源 Arduino 嵌入式控制器 open XL330 用 RB 150 | 淘宝 智能佳 | OpenRB-150 | `OpenRB-150 XL330` |
+| ~02:10 | GY-BNO080 BNO085 AR VR IMU… | （视频画面可见） | BNO08x IMU | `BNO085 IMU 模块` |
+| ~01:44 附近 | YBX-BMI088 惯性测量… | 淘宝 一板科技 | BMI088（备选 IMU） | `BMI088 IMU` |
+| ~02:12 | 6.4V 1800mAh 微克 磷酸铁锂电池组 (19×37×66mm, 98g) | （商品图可见） | 6V 电池 | `6.4V 1800mAh 磷酸铁锂` |
+| ~02:14 | DC-DC 可调降压模块 mini360… MP1584 固定输出 5V | 欣蕊 | 5V 稳压模块 | `mini360 MP1584 降压 5V` |
+| ~02:14 附近 | LM2596S DC-DC 直流可调降压电源模块 3A 固定 3.3V 输出 | 淘宝 世昌电子 | 3.3V 稳压（备选） | `LM2596S 降压 3.3V` |
+| ~02:18 | MSS-22D18-3 脚立贴 2 档手柄 2mm 拨动开关 (10 只) | 深圳三一… | 电源开关 | `MSS-22D18 拨动开关` |
+| ~02:19 | SS12D10 G5 拨动开关 2 档 3 脚 (2 只) | 天猫 zave… | 电源开关（备选） | `SS12D10 拨动开关` |
+| ~02:20 | Type-C 转安卓 Micro 转接头… | （视频画面可见） | USB 转接头 | `Type-C 转 Micro USB 转接头` |
+| ~02:25 | KA 黑色十字沉头加硬自攻螺丝… M2/M3/M4/M5/M6 | 优品 OceanBest | M2 自攻螺丝 | `M2 十字沉头自攻螺丝 黑色` |
+| ~00:24 | POM 套管平垫圈… | kimberhon 旗舰店 | POM 垫片 | `POM 套管平垫圈` |
+| ~00:25 | 304 不锈钢超薄平垫圈 | 新羽五金旗舰店 | 钢垫片 | `304 不锈钢超薄平垫圈` |
+
+> [!TIP]
+> 视频中还出现了 BMS / Type-C 充电板的交易快照（较早时间点），但本仓库推荐使用**成品 6V 可充电电池组**（内置 BMS），无需另购 BMS 和充电板。如果你选择自组电池，请参考上游仓库说明。
+
+![XL330 采购截图 ~01:44](../../docs/assets/video-stills/01m44_xl330_wowrobo.jpg)
+![Pi Zero 2W 采购截图 ~02:05](../../docs/assets/video-stills/02m05_pi_zero.jpg)
+![OpenRB-150 采购截图 ~02:06](../../docs/assets/video-stills/02m06_openrb.jpg)
+![BNO085 采购截图 ~02:10](../../docs/assets/video-stills/02m10_bno085.jpg)
+![6.4V 电池 ~02:12](../../docs/assets/video-stills/02m12_battery_6v4.jpg)
+![Mini360 降压模块 ~02:14](../../docs/assets/video-stills/02m14_mini360.jpg)
+![电源开关 ~02:18](../../docs/assets/video-stills/02m18_switch.jpg)
+![Type-C 转 Micro ~02:20](../../docs/assets/video-stills/02m20_typec_micro.jpg)
+![M2 螺丝 ~02:25](../../docs/assets/video-stills/02m25_screws.jpg)
+
+---
+
 ## 3D 打印件
 
 打印件的完整列表和参数请参考 [printing/README.md](../printing/README.md)。STL 文件从上游仓库的 `.3mf` 文件中提取。
+
+---
+
+## 参考来源
+
+| 来源 | 时间范围 | 对应章节 |
+| :--- | :--- | :--- |
+| [Microduck biped build / Dynamixel XL330](https://www.youtube.com/watch?v=Vep8AjoCnEM) | 00:24–02:25 | 视频采购快照（淘宝店铺参考） |
