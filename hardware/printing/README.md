@@ -42,14 +42,8 @@ Microduck 的 3D 模型以 `.3mf` 格式发布在上游仓库：
 > [!TIP]
 > 颜色仅影响外观，不影响功能。你可以自由选择配色。视频中使用了 Bambu Studio 的多色耗材列表（PLA Basic + Generic PLA 各色），单色打印机只需忽略颜色分组。
 
-<!-- TODO: 将以下视频截图放入 docs/assets/video-stills/ 后取消注释
 ![Bambu Studio 打印分组 ~00:54](../../docs/assets/video-stills/00m54_bambu_print_groups.jpg)
 ![Bambu Studio 切片界面 ~03:07](../../docs/assets/video-stills/03m07_bambu_studio.jpg)
--->
-
-📷 *[截图待放入：`00m54_bambu_print_groups.jpg` — Bambu Studio 中 5 个打印组的缩略图]*
-
-📷 *[截图待放入：`03m07_bambu_studio.jpg` — Bambu Studio 切片界面全貌]*
 
 ---
 

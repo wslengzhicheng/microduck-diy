@@ -104,18 +104,15 @@
 > [!TIP]
 > 视频中还出现了 BMS / Type-C 充电板的交易快照（较早时间点），但本仓库推荐使用**成品 6V 可充电电池组**（内置 BMS），无需另购 BMS 和充电板。如果你选择自组电池，请参考上游仓库说明。
 
-<!-- TODO: 将以下视频截图放入 docs/assets/video-stills/ 后取消注释
 ![XL330 采购截图 ~01:44](../../docs/assets/video-stills/01m44_xl330_wowrobo.jpg)
 ![Pi Zero 2W 采购截图 ~02:05](../../docs/assets/video-stills/02m05_pi_zero.jpg)
 ![OpenRB-150 采购截图 ~02:06](../../docs/assets/video-stills/02m06_openrb.jpg)
 ![BNO085 采购截图 ~02:10](../../docs/assets/video-stills/02m10_bno085.jpg)
 ![6.4V 电池 ~02:12](../../docs/assets/video-stills/02m12_battery_6v4.jpg)
 ![Mini360 降压模块 ~02:14](../../docs/assets/video-stills/02m14_mini360.jpg)
+![电源开关 ~02:18](../../docs/assets/video-stills/02m18_switch.jpg)
 ![Type-C 转 Micro ~02:20](../../docs/assets/video-stills/02m20_typec_micro.jpg)
 ![M2 螺丝 ~02:25](../../docs/assets/video-stills/02m25_screws.jpg)
--->
-
-📷 *[截图待放入：以上 8 张视频采购截图。文件名和时间戳见 [`docs/assets/video-stills/README.md`](../../docs/assets/video-stills/README.md)]*
 
 ---
 

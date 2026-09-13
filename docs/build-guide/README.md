@@ -210,17 +210,9 @@ Microduck 的关节采用**单侧舵机 + 对侧塑料惰轮环**的结构：
 
 📷 *[照片占位：线缆穿过线槽]*
 
-<!-- TODO: 将以下视频截图放入 docs/assets/video-stills/ 后取消注释
-![惰轮关节螺丝不能过紧 ~04:10](assets/video-stills/04m10_idler_joint.jpg)
--->
+![惰轮关节螺丝不能过紧 ~04:10](../assets/video-stills/04m10_idler_joint.jpg)
 
-📷 *[截图待放入：`04m10_idler_joint.jpg` — 惰轮关节特写，螺丝拧紧示范 ~04:10]*
-
-<!-- TODO: 将以下视频截图放入 docs/assets/video-stills/ 后取消注释
-![舵盘螺丝长度 ~07:25](assets/video-stills/07m25_screw_length.jpg)
--->
-
-📷 *[截图待放入：`07m25_screw_length.jpg` — 舵盘螺丝长度对比（过长穿透齿轮板）~07:25]*
+![舵盘螺丝长度 ~07:25](../assets/video-stills/07m25_screw_length.jpg)
 
 ### 阶段 3 检查清单
 
@@ -346,11 +338,7 @@ Microduck 的关节采用**单侧舵机 + 对侧塑料惰轮环**的结构：
 
 📷 *[照片占位：电子器件装入躯干]*
 
-<!-- TODO: 将以下视频截图放入 docs/assets/video-stills/ 后取消注释
-![IMU 安装位置 ~16:40](assets/video-stills/16m40_imu_mount.jpg)
--->
-
-📷 *[截图待放入：`16m40_imu_mount.jpg` — BNO085 IMU 安装在躯干背面的位置和方向 ~16:40]*
+![IMU 安装位置 ~16:40](../assets/video-stills/16m40_imu_mount.jpg)
 
 📷 *[照片占位：线缆布线整理]*
 
