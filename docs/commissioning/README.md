@@ -9,7 +9,13 @@ Microduck 的舵机 ID 设置、IMU 验证、首次冒烟测试和安全检查�
 
 ## 一、Dynamixel 舵机 ID 设置
 
-### 工具准备
+> **视频参考：** 以下舵机预配置流程参考了 [Microduck biped build / Dynamixel XL330](https://www.youtube.com/watch?v=Vep8AjoCnEM) [11:05–13:57]。
+
+### 硬件接口选择
+
+你可以使用下面任一方案将舵机连接电脑进行配置：
+
+#### 方案 A：U2D2 + Power Hub（本仓库默认推荐）
 
 | 工具 | 说明 |
 | :--- | :--- |
@@ -18,36 +24,69 @@ Microduck 的舵机 ID 设置、IMU 验证、首次冒烟测试和安全检查�
 | Dynamixel Wizard 2.0 | ROBOTIS 官方软件，[下载页面](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/) |
 | 6V 电源 | 可使用电池或台式电源 |
 
-### 设置步骤
+**连接方式：** U2D2 连电脑 USB → U2D2 连 Power Hub → Power Hub 接 6V 电源 → **单个** XL330 舵机连 Power Hub
 
-1. **连接硬件：** U2D2 连电脑 USB → U2D2 连 Power Hub → Power Hub 接 6V 电源 → **单个** XL330 舵机连 Power Hub
+#### 方案 B：OpenRB-150 USB 直连（视频作者做法）[11:05]
+
+如果手头没有 U2D2 和 Power Hub，可以直接用 OpenRB-150 板子代替：
+
+| 工具 | 说明 |
+| :--- | :--- |
+| OpenRB-150 | 既是舵机控制板，也可充当 USB→Dynamixel 接口 |
+| USB Micro-B 数据线 | 连接 OpenRB-150 到电脑 |
+| Dynamixel Wizard 2.0 | 同上 |
+
+**连接方式：** OpenRB-150 用 USB 线连电脑 → **单个** XL330 舵机连 OpenRB-150 的 Dynamixel 端口（OpenRB 通过 USB 5V 即可驱动单个 XL330，无需额外电源）
+
+> [!TIP]
+> 两种方案效果完全一样，仅硬件接口不同。方案 B 省去额外购买 U2D2 和 Power Hub 的费用，但如果你计划做大量舵机调试，U2D2 仍然更灵活。
+
+### 设置步骤
 
 > [!CAUTION]
 > **一次只连接一个舵机进行 ID 设置。** 出厂时所有 XL330 的 ID 都是 1，如果同时连接多个会导致总线冲突。
+
+1. **连接硬件：** 按上面选择的方案连接**单个** XL330 舵机
 
 2. **打开 Dynamixel Wizard 2.0：**
    - 设置扫描参数：
      - Protocol: **`2.0`**
      - Baud Rate: **`57600`**（出厂默认波特率）
-     - 端口: 选择 U2D2 对应的串口
+     - 端口: 选择 U2D2 或 OpenRB-150 对应的串口
    - 点击 **Scan**，应该能找到 ID=1 的舵机
 
 3. **修改舵机参数：**
 
-   按下表逐个设置每个舵机的 ID 和波特率：
+   按下表逐个设置每个舵机的 ID 和参数：
 
-   | 参数 | 出厂值 | 目标值 |
-   | :--- | :--- | :--- |
-   | **ID** | 1 | 按下表分配 |
-   | **Baud Rate** | 57600 | **1,000,000 (1Mbps)** |
-   | **Protocol** | 2.0 | 2.0（保持不变） |
-   | **Return Delay Time** | 250 | **0** |
-   | **PWM Slope** | (默认) | **255** |
-   | **Shutdown** | (默认) | **去掉输入电压错误触发项** |
+   | 参数 | 控制表地址 | 出厂值 | 目标值 |
+   | :--- | :---: | :--- | :--- |
+   | **ID** | 7 | 1 | 按下表分配 |
+   | **Baud Rate** | 8 | 57600 | **1,000,000 (1 Mbps)** |
+   | **Protocol** | — | 2.0 | 2.0（保持不变） |
+   | **Return Delay Time** | 9 | 250 | **0** |
+   | **PWM Slope** | 62 | (默认) | **255** |
+   | **Shutdown** | 63 | (默认) | **去掉 Bit 0 — Input Voltage Error** |
 
-   > 去掉 Shutdown 中的输入电压错误触发，是为了避免电池电压波动时舵机误停。
+   > 去掉 Shutdown 中的输入电压错误触发，是为了避免电池电压波动时舵机误停。PWM Slope 设为 255 使舵机输出更平滑。
 
-4. **ID 分配表：**
+4. **零位对齐（Center）** [12:40–13:23]
+
+> [!IMPORTANT]
+> **此步骤必须在将舵盘装入 3D 壳体之前完成。** 零位对齐决定舵盘与壳体的角度关系，跳过会导致行走偏斜或关节极限碰撞。
+
+   在 Dynamixel Wizard 中对**每个**舵机执行：
+
+   1. 选中该舵机
+   2. 将 **Torque Enable** (Addr 64) 设为 **ON**
+   3. 点击 **Center** 按钮（等效于 Goal Position = 0 / 2048），舵机转到物理中位
+   4. 此时舵盘十字花正好在真正的 0° 位置
+   5. 关闭 Torque，断开舵机，连接下一个
+
+> [!CAUTION]
+> **从 Center 对齐后的那一刻起，不要手动旋转舵盘。** 手动旋转会破坏零位，导致安装后关节角度偏差。
+
+5. **ID 分配表** [13:33–13:57]
 
    | ID | 名称 | 位置 | 所属链路 |
    | :---: | :--- | :--- | :--- |
@@ -67,10 +106,10 @@ Microduck 的舵机 ID 设置、IMU 验证、首次冒烟测试和安全检查�
    | 14 | `head_roll` | 头部横滚 | 头颈链 |
    | 15 | `mouth` | 嘴部（可选） | 头颈链 |
 
-5. **设置完成后验证：**
-   - 修改 Dynamixel Wizard 的扫描波特率为 **1Mbps**
+6. **设置完成后验证：**
+   - 修改 Dynamixel Wizard 的扫描波特率为 **1 Mbps**
    - 将所有已设置好 ID 的舵机连到同一条总线上
-   - 扫描应该能找到所有 14 个舵机（ID 1–14）
+   - 扫描应该能找到所有 14 个舵机（ID 1–14；加嘴部则为 15 个）
    - 在 Wizard 中逐个选中舵机，手动拨动轴，确认位置读数变化
 
 > [!TIP]
@@ -232,3 +271,12 @@ make voltage ID=2     # 查看指定舵机电压
 ```
 
 当电压低于 5V 时应及时充电，避免低电压导致舵机异常停止或通信错误。
+
+---
+
+## 参考来源
+
+| 来源 | 时间范围 | 对应章节 |
+| :--- | :--- | :--- |
+| [Microduck biped build / Dynamixel XL330](https://www.youtube.com/watch?v=Vep8AjoCnEM) | 11:05–13:23 | 一、舵机参数设置 + 零位对齐 |
+| 同上 | 13:33–13:57 | 一、ID 分配表 |
